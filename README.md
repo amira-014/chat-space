@@ -2,7 +2,7 @@
 
 
 
-|messages|
+|messages |       |                  |
 |:-------:|:-----:|:----------------:|
 |columun  |type   |option            |
 |body     |text   |none              |
@@ -18,7 +18,7 @@ add_index :messages, [:group_id, :user_id]
 
 ***
 
-|users|
+|users    |      |                         |
 |:—------:|:----:|:-----------------------:|
 |columun  |type  |option                   |
 |name     |string|null: false              |
@@ -31,7 +31,7 @@ has_many :groups, through => :groups_users
 
 ***
 
-|groups|
+|groups |      |      |
 |:--—--:|:–---:|:----:|
 |columun|type  |option|
 |name   |string|none  |
@@ -42,11 +42,11 @@ has_many :groups, through => :groups_users
 
 ***
 
-|groups_users|
-|:—-----:|:----—:|:---------------:|
-|columun |type   |option           |
-|group_id|integer|foreign_key: true|
-|user_id |integer|foreign_key: true|
+|groups_users|       |                 |
+|:—---------:|:----—:|:---------------:|
+|columun     |type   |option           |
+|group_id    |integer|foreign_key: true|
+|user_id     |integer|foreign_key: true|
 
 ##### relation
 belongs_to :group  
