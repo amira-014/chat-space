@@ -25,7 +25,7 @@ has_many :users, through => :groups_users
 has_many :messages  
 has_many :groups, through => :groups_users
 ##### index
-add_index :groups_users, [:name]
+add_index :users, :name
 
 ***
 
