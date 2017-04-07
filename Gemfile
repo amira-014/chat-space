@@ -47,7 +47,7 @@ end
 
 gem "haml-rails", "~> 0.9"
 
-gem 'erb2haml'
+gem "erb2haml"
 
 gem "font-awesome-rails"
 
