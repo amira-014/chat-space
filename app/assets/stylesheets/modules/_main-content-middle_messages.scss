@@ -1,0 +1,38 @@
+.messages{
+  height: calc(100% - 15% - 90px);
+  position: relative;
+    &__background{
+      background-color: #AAAAAA;
+      opacity: 0.03;
+      height: 100%;
+    }
+    .message-list{
+      margin: 0 40px 0;
+      padding-top: 46px;
+      position: absolute;
+      top:0;
+      right:0;
+      left:0;
+      bottom:0;
+        &__message{
+            &__post-user-name{
+              color: $messageBlack;
+              font-size: 16px;
+              margin-right: 10px;
+              float: left;
+            }
+            &__posted-date{
+              color: #999999;
+              font-size: 12px;
+              float: left;
+              margin-left: 10px;
+            }
+            &__message-text{
+              color: $messageBlack;
+              font-size: 14px;
+              padding-bottom: 40px;
+              clear: left;
+            }
+      }
+    }
+}

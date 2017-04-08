@@ -1,0 +1,20 @@
+.groups{
+  background-color: #2f3e51;
+  height: 85%;
+    .group-list{
+      padding-top: 20px;
+      &__group{
+        color: $mainWhite;
+        list-style: none;
+        margin:0 20px 0;
+          &__group-name{
+            font-size: 15px;
+            padding-bottom: 5px;
+          }
+          &__last-message{
+            font-size: 11px;
+            padding-bottom: 40px;
+          }
+      }
+    }
+}

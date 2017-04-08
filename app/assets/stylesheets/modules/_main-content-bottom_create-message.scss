@@ -1,0 +1,30 @@
+.create-message{
+  background-color: #C0C0C0;
+  height: 90px;
+  padding: 0 40px;
+  position: relative;
+    &__input-form{
+      color: #434A54;
+      font-size: 16px;
+      height: 50px;
+      width: calc(100vw - 495px);
+      padding: 0 10px 0;
+      margin-top: 20px;
+      border: none;
+    }
+    .fa.fa-image{
+      position: absolute;
+      top: 37px;
+      right: 145px;
+    }
+    &__send-button{
+      background-color: #38AEF0;
+      color: $mainWhite;
+      font-size: 20px;
+      height: 50px;
+      width: 80px;
+      margin: 20px 0 0 15px;
+      border: none;
+      float: right;
+    }
+}
