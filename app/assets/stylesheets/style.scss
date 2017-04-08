@@ -21,16 +21,22 @@ html, body{
             float: left;
             }
             &__new-group{
-            color: #FFFFFF;
             font-size: 20px;
             float: left;
             padding-left: 165px;
             }
+            .fa-pencil-square-o{
+              color: #FFFFFF;
+              text-decoration: none;
+            }
             &__user-setting{
-            color: #FFFFFF;
             font-size: 20px;
             float: right;
             padding-right: 20px;
+            }
+            .fa-cog{
+              color: #FFFFFF;
+              text-decoration: none;
             }
         }
     }
@@ -70,11 +76,13 @@ html, body{
           color: #38AEF0;
           height: 40px;
           line-height: 40px;
-          text-decoration: none;
           border: 1px solid #38AEF0;
           margin: 35px 40px 0 0;
           padding: 0 20px;
           float: right;
+        }
+        .edit-button{
+          text-decoration: none;
         }
         &__members{
           margin-left: 40px;
@@ -124,32 +132,31 @@ html, body{
     .create-message{
       background-color: #C0C0C0;
       height: 90px;
-        &__send-form{
-          padding: 20px 40px;
-          position: relative;
-            &__input-form{
-              color: #434A54;
-              font-size: 16px;
-              height: 50px;
-              width: calc(100vw - 495px);
-              padding: 0 10px 0;
-              border: none;
-            }
-            .fa.fa-image{
-              position: absolute;
-              top: 37px;
-              right: 145px;
-            }
-            &__send-button{
-              background-color: #38AEF0;
-              color: #FFFFFF;
-              font-size: 20px;
-              height: 50px;
-              width: 80px;
-              margin-left: 15px;
-              border: none;
-              float: right;
-            }
+      padding: 0 40px;
+      position: relative;
+        &__input-form{
+          color: #434A54;
+          font-size: 16px;
+          height: 50px;
+          width: calc(100vw - 495px);
+          padding: 0 10px 0;
+          margin-top: 20px;
+          border: none;
+        }
+        .fa.fa-image{
+          position: absolute;
+          top: 37px;
+          right: 145px;
+        }
+        &__send-button{
+          background-color: #38AEF0;
+          color: #FFFFFF;
+          font-size: 20px;
+          height: 50px;
+          width: 80px;
+          margin: 20px 0 0 15px;
+          border: none;
+          float: right;
         }
     }
 }
