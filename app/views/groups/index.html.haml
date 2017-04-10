@@ -1,0 +1,54 @@
+%div.side-content
+  %div.user
+    %div.user__user-content
+      %p.user__user-content__user-name amira
+      %div.user__user-content__new-group
+        = link_to '', 'http://google.co.jp', class: 'fa fa-pencil-square-o'
+      %div.user__user-content__user-setting
+        = link_to '', 'http://google.co.jp', class: 'fa fa-cog'
+
+  %div.groups
+    %div.group-list
+      %ul.group-list__group
+        %li.group-list__group__group-name sample
+        %li.group-list__group__last-message test
+      %ul.group-list__group
+        %li.group-list__group__group-name sample
+        %li.group-list__group__last-message test
+      %ul.group-list__group
+        %li.group-list__group__group-name sample
+        %li.group-list__group__last-message test
+
+%div.main-content
+  %div.current-group
+    %div.current-group__current-group-name sample
+    %div.current-group__edit-group-name
+      = link_to 'edit', 'http://google.co.jp', class: 'edit-button'
+    %div.current-group__members
+      %div.current-group__members__member-name MEMBER: amira
+
+  %div.messages
+    %div.messages__background
+    %div.message-list
+      %ul.message-list__message
+        %li.message-list__message__post-user-name amira
+        %li.message-list__message__posted-date 2017/04/07 11:48
+        %li.message-list__message__message-text test_1
+      %ul.message-list__message
+        %li.message-list__message__post-user-name amira
+        %li.message-list__message__posted-date 2017/04/07 11:48
+        %li.message-list__message__message-text test_2
+      %ul.message-list__message
+        %li.message-list__message__post-user-name amira
+        %li.message-list__message__posted-date 2017/04/07 11:48
+        %li.message-list__message__message-text test_3
+      %ul.message-list__message
+        %li.message-list__message__post-user-name amira
+        %li.message-list__message__posted-date 2017/04/07 11:48
+        %li.message-list__message__message-text test_4
+
+  %div.create-message
+    = form_tag '/messages', method: :post do
+      %input.create-message__input-form{:type => "text", :placeholder => "type a message", :name => "message"}
+      %i.fa.fa-image
+      %button.create-message__send-button{:type => "submit"} Send
