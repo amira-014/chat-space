@@ -53,3 +53,4 @@ gem "font-awesome-rails"
 
 gem 'pry-rails'
 
+gem 'devise'
