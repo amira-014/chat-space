@@ -1,0 +1,14 @@
+.alert-notice{
+  background-color: #38AEF0;
+  color: $mainWhite;
+  text-align: $alert_align;
+  height: $alert_height;
+}
+
+.alert-error{
+  background-color: #808000;
+  color: $mainWhite;
+  text-align: $alert_align;
+  height: $alert_height;
+}
+
