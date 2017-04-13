@@ -1,11 +1,11 @@
 %div.side-content
   %div.user
-    %div.user__user-content
-      %p.user__user-content__user-name amira
-      %div.user__user-content__new-group
-        = link_to '', 'http://google.co.jp', class: 'fa fa-pencil-square-o'
-      %div.user__user-content__user-setting
-        = link_to '', edit_user_registration_path, class: 'fa fa-cog'
+    %p.user__user-name
+      = @user.name
+    %div.user__new-group
+      = link_to '', 'http://google.co.jp', class: 'fa fa-pencil-square-o'
+    %div.user__user-setting
+      = link_to '', edit_user_registration_path, class: 'fa fa-cog'
 
   %div.groups
     %div.group-list
