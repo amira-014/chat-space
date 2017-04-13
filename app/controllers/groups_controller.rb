@@ -5,4 +5,9 @@ before_filter :authenticate_user!
     @user = current_user
   end
 
+  def new
+  end
+
+  def edit
+  end
 end
