@@ -1,20 +1,22 @@
 class GroupsController < ApplicationController
-before_filter :authenticate_user!
+  before_filter :authenticate_user!
+  before_action :find, only: [:show, :edit, :update]
+
+  def find
+    @group = Group.find(params[:id])
+  end
 
   def index
-    @user = current_user
     @groups = Group.all
   end
 
   def show
     @user = current_user
     @users = User.all
-    @group = Group.find(params[:id])
     @groups = Group.all
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def new
@@ -23,19 +25,20 @@ before_filter :authenticate_user!
 
   def create
     @group = Group.new(group_params)
-  if @group.save
-    redirect_to group_path(@group[:id]), notice: 'グループが作成されました'
-  else
-    redirect_to new_group_path, alert: 'グループの作成に失敗しました'
+    if @group.save
+      redirect_to group_path(@group[:id]), notice: 'グループが作成されました'
+    else
+      flash.now[:alert] = 'グループの作成に失敗しました'
+      render new_group_path
   end
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to group_path(@group[:id]), notice: 'グループが編集されました'
     else
-      redirect_to edit_group_path, alert: 'グループの編集に失敗しました'
+      flash.now[:alert] = 'グループの編集に失敗しました'
+      render edit_group_path
     end
   end
 
