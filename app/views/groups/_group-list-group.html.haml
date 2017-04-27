@@ -1,0 +1,6 @@
+- @groups.each do |group|
+  %div.groups__group-list__group
+    = link_to group_path(group.id), class: 'group-link' do
+      %p.groups__group-list__group__group-name
+        = group.name
+      %p.groups__group-list__group__last-message hoge
