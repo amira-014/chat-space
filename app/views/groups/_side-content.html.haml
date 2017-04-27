@@ -9,4 +9,5 @@
 
   %div.groups
     %div.groups__group-list
-      = render 'group-list-group'
+    - @groups.each do |group|
+      = render partial: 'group', locals: {group: group}
