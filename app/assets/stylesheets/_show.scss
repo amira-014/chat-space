@@ -1,0 +1,110 @@
+.top-content{
+  height: 15%;
+  border-bottom: #eeeeee 1px solid;
+    &__current-group{
+        @include clearfix();
+        &__current-group-name{
+          color: #333333;
+          font-size: 20px;
+          margin: 35px 0 0 40px;
+          float: left;
+        }
+        &__edit-group-name{
+          color: #38AEF0;
+          height: 40px;
+          line-height: 40px;
+          border: 1px solid #38AEF0;
+          margin: 35px 40px 0 0;
+          padding: 0 20px;
+          float: right;
+        }
+        .edit-button{
+          text-decoration: none;
+        }
+    }
+    &__members{
+      margin-left: 40px;
+      padding-top: 15px;
+        &__member{
+          color: #999999;
+          font-size: 12px;
+          margin-right: 5px;
+          float: left;
+        }
+        &__member-name{
+          color: #999999;
+          font-size: 12px;
+          float: left;
+        }
+    }
+}
+
+.messages{
+  height: calc(100% - 15% - 90px);
+  position: relative;
+    &__background{
+      background-color: #AAAAAA;
+      opacity: 0.03;
+      height: 100%;
+    }
+    .message-list{
+      margin: 0 40px 0;
+      padding-top: 46px;
+      position: absolute;
+      top:0;
+      right:0;
+      left:0;
+      bottom:0;
+        &__message{
+            &__post-user-name{
+              color: $messageBlack;
+              font-size: 16px;
+              margin-right: 10px;
+              float: left;
+            }
+            &__posted-date{
+              color: #999999;
+              font-size: 12px;
+              float: left;
+              margin-left: 10px;
+            }
+            &__message-text{
+              color: $messageBlack;
+              font-size: 14px;
+              padding-bottom: 40px;
+              clear: left;
+            }
+      }
+    }
+}
+
+.create-message{
+  background-color: #C0C0C0;
+  height: 90px;
+  padding: 0 40px;
+  position: relative;
+    &__input-form{
+      color: #434A54;
+      font-size: 16px;
+      height: 50px;
+      width: calc(100vw - 495px);
+      padding: 0 10px 0;
+      margin-top: 20px;
+      border: none;
+    }
+    .fa.fa-image{
+      position: absolute;
+      top: 37px;
+      right: 145px;
+    }
+    &__send-button{
+      background-color: #38AEF0;
+      color: $mainWhite;
+      font-size: 20px;
+      height: 50px;
+      width: 80px;
+      margin: 20px 0 0 15px;
+      border: none;
+      float: right;
+    }
+}
