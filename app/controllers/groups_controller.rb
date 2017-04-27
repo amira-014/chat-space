@@ -1,10 +1,6 @@
 class GroupsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :find, only: [:show, :edit, :update]
-
-  def find
-    @group = Group.find(params[:id])
-  end
+  before_action :set_group, only: [:show, :edit, :update]
 
   def index
     @groups = Group.all
@@ -45,5 +41,9 @@ class GroupsController < ApplicationController
 private
   def group_params
     params.require(:group).permit(:name, {user_ids:[]})
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end
