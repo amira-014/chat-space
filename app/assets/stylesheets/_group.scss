@@ -2,7 +2,7 @@
   width: 980px;
   margin: 60px auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: $chat-groupWhite;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
@@ -72,35 +72,36 @@
     }
   }
 
-  .chat-group-user {
-    padding: 0 15px;
-    line-height: 50px;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
+  // .chat-group-user {
+  //   padding: 0 15px;
+  //   line-height: 50px;
+  //   font-size: 14px;
+  //   border-bottom: 1px solid #ddd;
 
-    .chat-group-user__name {
-      float: left;
-    }
+  //   .chat-group-user__name {
+  //     float: left;
+  //   }
 
-    .chat-group-user__btn {
-      float: right;
-      display: inline-block;
-      cursor: pointer;
+  //   .chat-group-user__btn {
+  //     float: right;
+  //     display: inline-block;
+  //     cursor: pointer;
 
-      &.chat-group-user__btn--add {
-        color: #38aef0;
-      }
+  //     &.chat-group-user__btn--add {
+  //       color: #38aef0;
+  //     }
 
-      &.chat-group-user__btn--remove {
-        color: #f05050;
-      }
-    }
-  }
+  //     &.chat-group-user__btn--remove {
+  //       color: #f05050;
+  //     }
+  //   }
+  // }
+  // collection_check_boxesを使用している現段階では不要な記述なので、一旦コメントアウトしておいて今後必要に応じて削除、改変する
 
   .chat-group-form__action-btn {
     display: inline-block;
     padding: 12px 20px;
-    color: #fff;
+    color: $chat-groupWhite;
     background-color: #38aef0;
     border: 0;
   }
