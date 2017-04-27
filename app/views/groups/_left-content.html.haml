@@ -1,7 +1,7 @@
 %div.side-content
   %div.user
     %p.user__user-name
-      = @user.name
+      = current_user.name
     %div.user__new-group
       = link_to '', new_group_path, class: 'fa fa-pencil-square-o'
     %div.user__user-setting
