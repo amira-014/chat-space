@@ -1,0 +1,27 @@
+= render 'groups/side-content'
+%div.main-content
+  %div.top-content
+    %div.top-content__current-group.clearfix
+      %div.top-content__current-group__current-group-name
+        = @group.name
+      %div.top-content__current-group__edit-group-name
+        = link_to 'edit', edit_group_path(@group[:id]), class: 'edit-button'
+    %div.top-content__members
+      %div.top-content__members__member MEMBER:
+      %p.top-content__members__member-name
+        - @group.users.each do |member|
+          = member.name
+
+  %div.messages
+    %div.messages__background
+    %div.message-list
+      %div.message-list__message
+        = render partial: 'message', collection: @messages
+
+  %div.create-message
+    = form_for @message, url: group_messages_path do |f|
+      %div.create-message__form
+        = f.text_field :body, placeholder: "type a message", class: "create-message__input-form"
+      %i.fa.fa-image
+      %div.create-message__button
+        = f.submit "Send", class: "create-message__send-button"
