@@ -5,7 +5,7 @@
       %div.top-content__current-group__current-group-name
         = @group.name
       %div.top-content__current-group__edit-group-name
-        = link_to 'edit', edit_group_path(@group[:id]), class: 'edit-button'
+        = link_to 'edit', edit_group_path(@group), class: 'edit-button'
     %div.top-content__members
       %div.top-content__members__member MEMBER:
       %p.top-content__members__member-name
@@ -19,7 +19,7 @@
         = render partial: 'message', collection: @messages
 
   %div.create-message
-    = form_for @message, url: group_messages_path do |f|
+    = form_for [@group, @message] do |f|
       %div.create-message__form
         = f.text_field :body, placeholder: "type a message", class: "create-message__input-form"
       %i.fa.fa-image
