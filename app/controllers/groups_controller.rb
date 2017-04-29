@@ -17,7 +17,6 @@ end
 def create
   @group = Group.new(group_params)
   if @group.save
-    binding.pry
     redirect_to group_messages_path(@group.id), notice: 'グループが作成されました'
   else
     flash.now[:alert] = 'グループの作成に失敗しました'
