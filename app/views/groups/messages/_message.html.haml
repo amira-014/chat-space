@@ -1,6 +1,6 @@
 %p.message-list__message__post-user-name
   = message.user.name
 %p.message-list__message__posted-date
-  = message.created_at.to_s(:created_at)
+  = l message.created_at, format: :default
 %p.message-list__message__message-text
   = message.body
