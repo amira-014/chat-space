@@ -22,7 +22,6 @@ def message_params
 end
 
 def set_variables
-  binding.pry
   @group = Group.find(params[:group_id])
   @groups = current_user.groups
   @message = Message.new
