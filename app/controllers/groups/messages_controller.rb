@@ -10,14 +10,13 @@ def create
     redirect_to group_messages_path(@group.id)
   else
     flash.now[:alert] = 'メッセージの入力が必要です'
-    render :show
+    render :index
   end
 
 end
 
 private
 def message_params
-  binding.pry
   params.require(:message).permit(:body).merge(group_id: params[:group_id])
 end
 
