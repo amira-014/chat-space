@@ -16,7 +16,7 @@
     %div.messages__background
     %div.message-list
       %div.message-list__message
-        = render partial: 'message', collection: @messages
+        = render @messages
 
   %div.create-message
     = form_for [@group, @message] do |f|
