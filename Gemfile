@@ -57,3 +57,5 @@ gem "font-awesome-rails"
 gem 'pry-rails'
 
 gem 'devise'
+
+gem 'i18n_generators'
