@@ -1,0 +1,41 @@
+$(function() {
+  function buildHTML(message) {
+    var user = message.name;
+    var date = message.created_at;
+    var body = message.body;
+
+    var message_user = $('<li class = "message-list__message__post-user-name">').append(user);
+    var message_date = $('<li class = "message-list__message__posted-date">').append(date);
+    var message_text = $('<li class = "message-list__message__message-text">').append(body);
+
+    var html = $('<ul class="message-list__message">').append(message_user, message_date, message_text);
+
+   return html;
+  }
+
+  $('#js-form').on('submit', function(e) {
+    e.preventDefault();
+    var formData = new FormData($(this).get(0));
+    var group_id = $('.group_id').attr('value');
+    var url = '/groups/' + group_id + '/messages.json';
+    $.ajax({
+      type: 'POST',
+      url: url,
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data) {
+      var html = buildHTML(data);
+      var group_url = '/groups/' + group_id + '/messages';
+      $('.message-list').append(html);
+      $('a[href="' + group_url + '"]').find('.groups__group-list__group__last-message').html(data.body);
+      $('.create-message__input-form').val('');
+      $('input').removeAttr("disabled");
+    })
+    .fail(function() {
+      alert('error');
+    });
+  });
+});
