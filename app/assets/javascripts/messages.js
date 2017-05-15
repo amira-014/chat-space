@@ -4,9 +4,17 @@ $(function() {
     var date = message.created_at;
     var body = message.body;
 
-    var message_user = $('<li class = "message-list__message__post-user-name">').append(user);
-    var message_date = $('<li class = "message-list__message__posted-date">').append(date);
-    var message_text = $('<li class = "message-list__message__message-text">').append(body);
+    var userClass = 'message-list__message__post-user-name';
+    var dateClass = 'message-list__message__posted-date';
+    var bodyClass = 'message-list__message__message-text';
+
+    function creteHtmlView(class, content){
+      return `<li class= "${class}">${content}</li>`;
+    }
+
+    var message_user = createHtmlView(userClass, user);
+    var message_date = createHtmlView(dateClass, date);
+    var message_text = createHtmlView(bodyClass, body);
 
     var html = $('<ul class="message-list__message">').append(message_user, message_date, message_text);
 
