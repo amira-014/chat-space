@@ -18,7 +18,7 @@
       = render @messages
 
   %div.create-message
-    = form_for [@group, @message], html: { id: "js-form" } do |f|
+    = form_for [@group, @message], id: "#js-form" do |f|
       %div.create-message__form
         = f.text_field :body, placeholder: "type a message", class: "create-message__input-form"
       %i.fa.fa-image
