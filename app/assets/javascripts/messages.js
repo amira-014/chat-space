@@ -18,7 +18,7 @@ $(function() {
 
     var html = $('<ul class="message-list__message">').append(message_user, message_date, message_text);
 
-   return html;
+    return html;
   }
 
   $('#js-form').on('submit', function(e) {
