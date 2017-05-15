@@ -7,7 +7,10 @@ end
 def create
   @message = current_user.messages.new(message_params)
   if @message.save
+    respond_to do |format|
+      format.html { redirect_to group_messages_path(@group.id) }
       format.json { render 'messages.json.jbuilder' }
+    end
   else
     flash.now[:alert] = 'メッセージの入力が必要です'
     render :index
