@@ -15,13 +15,14 @@
   %div.messages
     %div.messages__background
     %div.message-list
-      %div.message-list__message
-        = render @messages
+      = render @messages
 
   %div.create-message
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: { id: "js-form" } do |f|
       %div.create-message__form
         = f.text_field :body, placeholder: "type a message", class: "create-message__input-form"
       %i.fa.fa-image
       %div.create-message__button
         = f.submit "Send", class: "create-message__send-button"
+      %div.create-message__hidden
+        = f.hidden_field :group_id, value: @group.id, class: "group_id"
