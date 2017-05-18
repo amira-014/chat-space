@@ -10,6 +10,7 @@ html, body{
 }
 
 .main-content{
+  box-sizing: border-box;
   height: 100%;
   width: calc( 100vw - 300px );
   float: left;
