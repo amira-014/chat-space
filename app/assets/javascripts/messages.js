@@ -1,5 +1,5 @@
 $(function() {
-  function buildHTML(message) {
+  function buildHTML(message){
     var user = message.name;
     var date = message.created_at;
     var body = message.body;
@@ -7,10 +7,6 @@ $(function() {
     var userClass = 'message-list__message__post-user-name';
     var dateClass = 'message-list__message__posted-date';
     var bodyClass = 'message-list__message__message-text';
-
-    function creteHtmlView(class, content){
-      return `<li class= "${class}">${content}</li>`;
-    }
 
     var message_user = createHtmlView(userClass, user);
     var message_date = createHtmlView(dateClass, date);
@@ -21,7 +17,12 @@ $(function() {
     return html;
   }
 
-  $('#js-form').on('submit', function(e) {
+  function createHtmlView(selector, content) {
+    return `<li class= "${selector}">${content}</li>`;
+  }
+
+  $('#new_message').on('submit', function(e) {
+    console.log("いるよ〜〜〜！");
     e.preventDefault();
     var formData = new FormData($(this).get(0));
     var group_id = $('.group_id').attr('value');
@@ -35,6 +36,8 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
+      console.log("いるよ〜〜〜！2")
+      console.log(data);
       var html = buildHTML(data);
       var group_url = '/groups/' + group_id + '/messages';
       $('.message-list').append(html);
@@ -46,4 +49,5 @@ $(function() {
       alert('error');
     });
   });
+
 });
