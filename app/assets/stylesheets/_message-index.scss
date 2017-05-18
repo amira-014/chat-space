@@ -56,6 +56,7 @@
       left:0;
       bottom:0;
         &__message{
+          list-style: none;
             &__post-user-name{
               color: $messageBlack;
               font-size: 16px;

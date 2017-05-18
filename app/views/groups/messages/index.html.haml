@@ -15,8 +15,7 @@
   %div.messages
     %div.messages__background
     %div.message-list
-      %div.message-list__message
-        = render @messages
+      = render @messages
 
   %div.create-message
     = form_for [@group, @message] do |f|
@@ -25,3 +24,5 @@
       %i.fa.fa-image
       %div.create-message__button
         = f.submit "Send", class: "create-message__send-button"
+      %div.create-message__hidden
+        = f.hidden_field :group_id, value: @group.id, class: "group_id"
