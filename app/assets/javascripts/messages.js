@@ -44,7 +44,9 @@ $(function() {
     })
     .fail(function() {
       alert('error');
+      $("#flash-message").append('<div class="alert alert-danger">メッセージ送信に失敗しました</div>');
     });
+
   });
 
 });

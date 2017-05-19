@@ -7,6 +7,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %div#flash-message
     - flash.each do |key, value|
       - key = "info" if key == "notice"
       - key = "danger" if key == "alert"
