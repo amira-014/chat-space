@@ -10,9 +10,8 @@ html, body{
 }
 
 .main-content{
-  box-sizing: border-box;
   height: 100%;
-  width: calc( 100vw - 300px );
+  width: calc( 98vw - 300px );
   float: left;
 }
 
@@ -52,6 +51,7 @@ html, body{
 }
 
 .groups{
+  overflow: scroll;
   background-color: #2f3e51;
   height: 85%;
     &__group-list{
