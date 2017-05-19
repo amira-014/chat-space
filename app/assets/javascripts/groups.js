@@ -2,7 +2,7 @@ $(function(e) {
   var list = $(".chat-group-users");
 
   function appendUserList(user) {
-    var user_html = $(`<li class="chat-group-user" data-id=${ user.id } data-name=${ user.name }>${ user.name }</li>`).append(`<button type="button"class="chat-group-user__btn chat-group-user__btn--add">追加</button>`);
+    var user_html = $(`<li class="chat-group-user" data-id=${ user.id } data-name=${ user.name }>${ user.name }</li>`).append(`<button type="button"class="chat-group-user__btn" id="add-btn">追加</button>`);
     list.append(user_html);
   }
 
@@ -14,7 +14,7 @@ $(function(e) {
       <div class="group-member" id="chat-group-user-${userId}">
       <input type="hidden" name="group[user_ids][]" value="${userId}">
       <p>${userName}
-      <button type="button"class="chat-group-user__btn chat-group-user__btn--remove" data-id="${userId}">☓</button></p></div>
+      <button type="button"class="chat-group-user__btn" id="remove-btn" data-id="${userId}">削除</button></p></div>
       `)
     $(parent).remove();
   }
@@ -46,14 +46,14 @@ $(function(e) {
     });
   });
 
-  $(".chat-group-users").on("click", ".chat-group-user__btn--add", function(e) {
+  $(".chat-group-users").on("click", "#add-btn", function(e) {
     e.preventDefault();
     var parent = $(this).parent()
     addUserName(parent)
   });
 
 
-  $(".group-members").on("click", ".chat-group-user__btn--remove", function() {
+  $(".group-members").on("click", "#remove-btn", function() {
     var id = $(this).data('id');
     var parent = $(this).parents(".group-member");
     parent.remove();

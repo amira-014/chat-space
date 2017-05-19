@@ -27,7 +27,7 @@
             = f.hidden_field :user_ids, multiple: true, value: user.id
             .p.group-member
               = user.name
-              = button_tag '×', type: 'button', class: 'chat-group-user__btn chat-group-user__btn--remove', value: user.id
+              = button_tag type: 'button', class: 'chat-group-user__btn', id: 'remove-btn', value: user.id
 
   %div.chat-group-form__field.clearfix
     %div.chat-group-form__field--left
