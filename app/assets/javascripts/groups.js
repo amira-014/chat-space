@@ -1,21 +1,24 @@
-$(function(e) {
+$(function() {
   var list = $(".chat-group-users");
 
   function appendUserList(user) {
-    var user_html = $(`<li class="chat-group-user" data-id=${ user.id } data-name=${ user.name }>${ user.name }</li>`).append(`<button type="button"class="chat-group-user__btn" id="add-btn">追加</button>`);
-    list.append(user_html);
+    var userName =  `<li class="chat-group-user" data-id=${ user.id } data-name=${ user.name }>${ user.name }</li>`;
+    var addButton = `<button type="button"class="chat-group-user__btn" id="add-btn">追加</button>`;
+    var userList = $(userName).append(addButton);
+    list.append(userList);
   }
 
   function addUserName(parent) {
     var memberList = $(".group-members");
-    var userId = parent.data('id');
-    var userName = parent.data('name');
-    memberList.append(`
+    var memberListHTML = `
       <div class="group-member">
       <input type="hidden" name="group[user_ids][]" value="${userId}">
       <p>${userName}
       <button type="button"class="chat-group-user__btn" id="remove-btn" data-id="${userId}">削除</button></p></div>
-      `)
+      `;
+    var userId = parent.data('id');
+    var userName = parent.data('name');
+    memberList.append(memberListHTML)
     $(parent).remove();
   }
 
