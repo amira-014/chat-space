@@ -25,7 +25,7 @@
         - @users.each do |user|
           %div.group-member
             = f.hidden_field :user_ids, multiple: true, value: user.id
-            .p.group-member
+            %p.group-member
               = user.name
               = button_tag type: 'button', class: 'chat-group-user__btn', id: 'remove-btn', value: user.id
 
