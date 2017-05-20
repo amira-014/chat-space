@@ -22,7 +22,6 @@ $(function() {
   }
 
   $('#new_message').on('submit', function(e) {
-    console.log("いるよ〜〜〜！");
     e.preventDefault();
     var formData = new FormData($(this).get(0));
     var group_id = $('.group_id').attr('value');
@@ -36,8 +35,6 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      console.log("いるよ〜〜〜！2")
-      console.log(data);
       var html = buildHTML(data);
       var group_url = '/groups/' + group_id + '/messages';
       $('.message-list').append(html);
@@ -47,7 +44,9 @@ $(function() {
     })
     .fail(function() {
       alert('error');
+      $("#flash-message").append('<div class="alert alert-danger">メッセージ送信に失敗しました</div>');
     });
+
   });
 
 });

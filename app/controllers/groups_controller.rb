@@ -7,11 +7,13 @@ def index
 end
 
 def edit
+  @users = @group.users.where.not(id: current_user.id)
 end
 
 
 def new
   @group = Group.new
+  @users = @group.users.where.not(id: current_user.id)
 end
 
 def create
