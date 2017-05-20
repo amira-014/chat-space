@@ -11,7 +11,7 @@ $(function(e) {
     var userId = parent.data('id');
     var userName = parent.data('name');
     memberList.append(`
-      <div class="group-member" id="chat-group-user-${userId}">
+      <div class="group-member">
       <input type="hidden" name="group[user_ids][]" value="${userId}">
       <p>${userName}
       <button type="button"class="chat-group-user__btn" id="remove-btn" data-id="${userId}">削除</button></p></div>
