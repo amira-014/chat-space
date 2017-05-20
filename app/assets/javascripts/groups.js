@@ -35,7 +35,7 @@ $(function() {
     })
     .done(function(data) {
       $(".chat-group-user").remove();
-      if (input.length !== 0) {
+      if (data.users.length !== 0) {
         $.each(data.users, function(i, user) {
           appendUserList(user);
         });
